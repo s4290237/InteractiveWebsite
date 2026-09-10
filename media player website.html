@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>ARTWeBSITE</title>
+</head>
+<body>
+    <canvas id="Canvas"></canvas>
+</body>
+
+<script>
+    const cnv = document.getElementById('canvas');
+    const ctx = cnv.getContext('2d');
+    cnv.width = 400;
+    cnv.height = 400;
+
+    let x = -100
+
+    function draw() {
+        ctx.fillStyle = 'turquoise';
+        ctx.fillRect(0, 0, cnv.width, cnv.height);
+        ctx.fillStyle = `deeppink`
+        ctx.fillRect(x % 500 - 100, 150, 100, 100);
+        x++
+        requestAnimationFrame (draw)
+    }
+
+    requestAnimationFrame (draw)
+</script>
+
+</html>
